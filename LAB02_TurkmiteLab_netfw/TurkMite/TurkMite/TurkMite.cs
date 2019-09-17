@@ -8,8 +8,8 @@ namespace TurkMite
         private int x = 100;
         private int y = 100;
         private int direction = 0;  // 0 up, 1 right, 2 down, 3 left
-        private readonly Vec3b black = new Vec3b(0, 0, 0);
-        private readonly Vec3b white = new Vec3b(255, 255, 255);
+        public readonly Vec3b Black = new Vec3b(0, 0, 0);
+        public readonly Vec3b White = new Vec3b(255, 255, 255);
 
         public Mat Image { get; }
         private Mat.Indexer<Vec3b> indexer;
@@ -40,15 +40,15 @@ namespace TurkMite
                 y = Math.Max(0, Math.Min(y, Image.Rows - 1));
             }
         }
-            private (int deltaDirection, Vec3b newColor) Step(Vec3b currentColor)
+            public (int deltaDirection, Vec3b newColor) Step(Vec3b currentColor)
             {
-                if (currentColor == black)
+                if (currentColor == Black)
                 {
-                    return (1, white);
+                    return (1, White);
                 }
                 else
                 {
-                    return (-1, black);
+                    return (-1, Black);
                 }
             }
         }

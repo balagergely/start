@@ -5,7 +5,7 @@ namespace Tests
 {
     public class BasicTests
     {
-        [Fact]
+        [TestMethod]
         public void Test1()
         {
             var t = new Turkmite();
